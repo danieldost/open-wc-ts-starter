@@ -1,15 +1,14 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators.js';
 
-import styles from './demo-element.scss'
+import styles from './demo-element.scss';
 
-const logo = new URL('../../assets/open-wc-logo.svg', import.meta.url).href;
-
+import logo from '../assets/open-wc-logo.svg';
 
 export class DemoElement extends LitElement {
   @property({ type: String }) title = 'My app';
 
-  static styles = styles
+  static styles = styles;
 
   render() {
     return html`

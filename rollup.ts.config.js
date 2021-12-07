@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript2';
 import resolve from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import litcss from 'rollup-plugin-postcss-lit';
+import image from '@rollup/plugin-image';
 
 export default {
   input: 'src/index.ts',
@@ -17,7 +18,6 @@ export default {
   plugins: [
     resolve({
       browser: true,
-      development: true,
     }),
     typescript(),
     postcss({
@@ -25,5 +25,6 @@ export default {
       inject: false,
     }),
     litcss(),
+    image(),
   ],
 };

@@ -6,7 +6,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-}
+};
 
 interface Story<T> {
   (args: T): TemplateResult;
@@ -19,8 +19,14 @@ interface ArgTypes {
   backgroundColor?: string;
 }
 
-const Template: Story<ArgTypes> = ({ title, backgroundColor = 'white' }: ArgTypes) => html`
-  <demo-element style="--demo-element-background-color: ${backgroundColor}" .title=${title}></demo-element>
+const Template: Story<ArgTypes> = ({
+  title,
+  backgroundColor = 'white',
+}: ArgTypes) => html`
+  <demo-element
+    style="--demo-element-background-color: ${backgroundColor}"
+    .title=${title}
+  ></demo-element>
 `;
 
 export const DemoElement = Template.bind({});
