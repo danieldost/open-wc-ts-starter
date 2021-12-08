@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
-    "test": "npm run build:ts && wtr --coverage",
+    "test": "npm run build:ts && wtr --node-resolve --coverage",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "storybook": "npm run build:ts && start-storybook -p 6060",
     "build:ts": "rimraf out-tsc && tsc && rollup --config rollup.ts.config.js",
@@ -70,7 +70,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && wtr"
+      "pre-commit": "lint-staged && npm run test"
     }
   },
   "lint-staged": {
