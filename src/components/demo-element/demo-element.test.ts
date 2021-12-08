@@ -1,8 +1,8 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import { DemoElement } from '../src/DemoElement.js';
-import '../src';
+import { DemoElement } from './index';
+import '../../index';
 
 describe('DemoElement', () => {
   let element: DemoElement;

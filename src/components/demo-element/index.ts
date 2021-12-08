@@ -3,7 +3,7 @@ import { property } from 'lit/decorators.js';
 
 import styles from './demo-element.scss';
 
-import logo from '../assets/open-wc-logo.svg';
+import logo from '../../../assets/open-wc-logo.svg';
 
 export class DemoElement extends LitElement {
   @property({ type: String }) title = 'My app';

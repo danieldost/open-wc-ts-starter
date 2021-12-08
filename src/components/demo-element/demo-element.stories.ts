@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit';
-import '../src';
+import '../../index';
 
 export default {
   title: 'DemoElement',

@@ -7,16 +7,13 @@
   "scripts": {
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
-    "test": "tsc && wtr --coverage",
+    "test": "npm run build:ts && wtr --coverage",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
-    "storybook": "tsc && rollup --config rollup.ts.config.js --watch & npm run analyze -- --exclude dist && start-storybook -p 6060",
-    "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook",
+    "storybook": "npm run build:ts && start-storybook -p 6060",
     "build:ts": "rimraf out-tsc && tsc && rollup --config rollup.ts.config.js",
     "build": "rimraf dist && rollup -c rollup.config.js && npm run analyze",
-    "build:watch": "npm run build -- --watch",
     "analyze": "cem analyze --litelement --exclude dist",
-    "start": "npm run build:ts && npm run build && web-dev-server --root-dir dist --app-index index.html --open",
-    "build-storybook": "build-storybook"
+    "start": "npm run build:ts && npm run build && web-dev-server --root-dir dist --app-index index.html --open"
   },
   "dependencies": {
     "lit": "^2.0.2"
@@ -35,6 +32,9 @@
     "@storybook/addon-actions": "^6.4.8",
     "@storybook/addon-essentials": "^6.4.8",
     "@storybook/addon-links": "^6.4.8",
+    "@storybook/cli": "^6.4.8",
+    "@storybook/core": "^6.4.8",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/web-components": "^6.4.8",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
@@ -47,6 +47,8 @@
     "deepmerge": "^4.2.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.0",
+    "html-webpack-plugin": "^5.5.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "node-sass": "^6.0.1",
@@ -61,24 +63,6 @@
     "sass": "^1.44.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.2"
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "@open-wc",
-      "prettier"
-    ],
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "rules": {
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "error"
-      ],
-      "import/no-unresolved": "off",
-      "import/extensions": "off"
-    }
   },
   "prettier": {
     "singleQuote": true,
