@@ -70,14 +70,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run test"
     }
   },
   "lint-staged": {
     "*.ts": [
       "eslint --fix",
-      "prettier --write",
-      "npm run test"
+      "prettier --write"
     ]
   },
   "customElements": "custom-elements.json"
