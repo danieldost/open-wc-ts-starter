@@ -76,7 +76,8 @@
   "lint-staged": {
     "*.ts": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "npm run test"
     ]
   },
   "customElements": "custom-elements.json"
