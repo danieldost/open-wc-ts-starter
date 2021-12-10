@@ -1,5 +1,6 @@
-import { html, TemplateResult } from 'lit';
-import '../../index';
+import { html } from 'lit';
+import './index';
+import { Story } from '../../../typings/story';
 
 export default {
   title: 'DemoElement',
@@ -7,12 +8,6 @@ export default {
     backgroundColor: { control: 'color' },
   },
 };
-
-interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
-}
 
 interface ArgTypes {
   title?: string;

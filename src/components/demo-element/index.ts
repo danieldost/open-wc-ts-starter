@@ -28,7 +28,6 @@ export class DemoElement extends LitElement {
           Code examples
         </a>
       </main>
-
       <p class="app-footer">
         🚽 Made with love by
         <a
@@ -41,3 +40,5 @@ export class DemoElement extends LitElement {
     `;
   }
 }
+
+customElements.define('demo-element', DemoElement);

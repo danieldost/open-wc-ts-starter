@@ -1,0 +1,13 @@
+import { LitElement, html } from 'lit';
+
+import styles from './{{component_name}}.scss';
+
+export class {{pascalCase component_name}} extends LitElement {
+  static styles = styles;
+
+  render() {
+    return html``;
+  }
+}
+
+customElements.define('{{component_name}}', {{pascalCase component_name}});
