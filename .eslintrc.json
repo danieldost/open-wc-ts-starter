@@ -18,7 +18,9 @@
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "warn",
-    "jest/prefer-to-have-length": "warn"
+    "jest/prefer-to-have-length": "warn",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"]
   },
   "overrides": [
     {

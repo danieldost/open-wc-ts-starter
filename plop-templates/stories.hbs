@@ -3,12 +3,14 @@ import './index';
 import { Story } from '../../../typings/story';
 
 export default {
-  title: '{{pascalCase component_name}}',
+  title: '{{pascalCase component_type}}/{{pascalCase component_name}}',
 };
 
 interface ArgTypes {}
 
-const Template: Story<ArgTypes> = () => html` <{{component_name}}></{{component_name}}`;
+const Template: Story<ArgTypes> = () => html`
+  <{{component_name}}></{{component_name}}>
+`;
 
 export const {{pascalCase component_name}} = Template.bind({});
 

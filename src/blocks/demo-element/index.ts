@@ -18,7 +18,7 @@ export class DemoElement extends LitElement {
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.title}</h1>
         <p>${this.description}</p>
-        <p>Edit <code>src/DemoElement.ts</code> and save to reload.</p>
+        <p>Edit <code>src/demo-element/index.ts</code> and save to reload.</p>
         <a
           class="app-link"
           href="https://open-wc.org/guides/developing-components/code-examples"
@@ -27,6 +27,7 @@ export class DemoElement extends LitElement {
         >
           Code examples
         </a>
+        <cvt-button text="Test CTA"></cvt-button>
       </main>
       <p class="app-footer">
         🚽 Made with love by

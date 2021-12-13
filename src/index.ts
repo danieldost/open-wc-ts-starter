@@ -1,1 +1,2 @@
-import './components/demo-element';
+import './blocks/demo-element';
+import './atoms/cvt-button';

@@ -3,7 +3,7 @@ import './index';
 import { Story } from '../../../typings/story';
 
 export default {
-  title: 'DemoElement',
+  title: 'Blocks/DemoElement',
   argTypes: {
     backgroundColor: { control: 'color' },
   },

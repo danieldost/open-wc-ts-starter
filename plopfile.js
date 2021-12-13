@@ -1,12 +1,12 @@
 module.exports = function createPlopConfig(plop) {
   plop.setGenerator('component generator', {
-    description: 'generate bootstraped test, stories and styles',
+    description: 'generate bootstrapped test, stories and styles',
     prompts: [
       {
         type: 'list',
         name: 'component_type',
         message: 'Choose the type of component you want to create:',
-        choices: ['atomic', 'molecular', 'block']
+        choices: ['atoms', 'blocks', 'pages']
       },
       {
         type: 'input',

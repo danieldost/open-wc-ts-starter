@@ -1,20 +1,18 @@
 {
   "name": "demo-element",
-  "description": "Webcomponent demo-element following open-wc recommendations",
-  "license": "MIT",
-  "author": "demo-element",
+  "description": "Web components starter app following open-wc recommendations",
   "version": "0.0.0",
   "scripts": {
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "test": "npm run build:ts && wtr --node-resolve --coverage",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
-    "storybook": "npm run build:ts && start-storybook -p 6060",
+    "storybook": "tsc --watch & rollup --config rollup.ts.config.js --watch & start-storybook -p 6060 -s out-tsc",
     "build:ts": "rimraf out-tsc && tsc && rollup --config rollup.ts.config.js",
     "build": "rimraf dist && rollup -c rollup.config.js && npm run analyze",
     "analyze": "cem analyze --litelement --exclude dist",
     "start": "npm run build:ts && npm run build && web-dev-server --root-dir dist --app-index index.html --open",
-    "create-component": "plop"
+    "plop": "plop"
   },
   "dependencies": {
     "lit": "^2.0.2"
